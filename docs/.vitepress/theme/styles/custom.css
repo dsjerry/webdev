@@ -101,15 +101,19 @@
   0% {
     box-shadow: 0 20px 40px rgba(62, 175, 124, 0.2);
   }
+
   100% {
     box-shadow: 0 20px 60px rgba(62, 175, 124, 0.4);
   }
 }
 
 @keyframes iconBounce {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.2);
   }
@@ -118,6 +122,16 @@
 /* 侧边栏样式 */
 .VPSidebar {
   border-right: 1px solid var(--vp-c-divider);
+}
+
+/* 侧边栏滚动条调小 */
+.VPSidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.VPSidebar::-webkit-scrollbar-thumb {
+  background: rgb(var(--vp-c-brand-1) / 40%);
+  border-radius: 2px;
 }
 
 /* 导航栏样式 */
@@ -301,13 +315,4 @@ tr:hover {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-/* WAT (WebAssembly Text) format styling */
-.wat-block {
-  padding: 1rem 1.2rem;
-  border-radius: 8px;
-  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
-  font-size: 0.875rem;
-  line-height: 1.6;
 }

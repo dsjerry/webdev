@@ -6,9 +6,9 @@ hero:
     name: "WebDev Learn"
     text: "从零到精通"
     tagline: "一步步掌握 Web 开发 —— 现代、实用、适合初学者"
-    # image:
-    #     src: /logo.svg
-    #     alt: WebDev Learn
+    image:
+        src: /logo.svg
+        alt: WebDev Learn
     actions:
         - theme: brand
           text: 开始学习

@@ -5,6 +5,9 @@ hero:
     name: "WebDev Learn"
     text: "From Zero to Mastery"
     tagline: "Master web development step by step — modern, practical, beginner-friendly"
+    image:
+        src: /logo.svg
+        alt: WebDev Learn
     actions:
         - theme: brand
           text: Get Started

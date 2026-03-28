@@ -331,6 +331,7 @@ export default defineConfig({
     description: "From zero to mastery in web development",
 
     themeConfig: {
+        logo: "/logo.svg",
         search: {
             provider: "local",
             options: {
@@ -348,11 +349,11 @@ export default defineConfig({
             copyright: "版权所有 © 2024-present WebDev Learn",
         },
         socialLinks: [
-            { icon: "github", link: "https://github.com/webdev-learn" },
+            { icon: "github", link: "https://github.com/dsjerry/webdev" },
         ],
         editLink: {
             pattern:
-                "https://github.com/webdev-learn/docs/edit/main/:path",
+                "https://github.com/dsjerry/webdev/edit/main/docs/:path",
             text: "在 GitHub 上编辑此页",
         },
         docFooter: {
@@ -378,11 +379,11 @@ export default defineConfig({
                     copyright: "版权所有 © 2024-present WebDev Learn",
                 },
                 socialLinks: [
-                    { icon: "github", link: "https://github.com/webdev-learn" },
+                    { icon: "github", link: "https://github.com/dsjerry/webdev" },
                 ],
                 editLink: {
                     pattern:
-                        "https://github.com/webdev-learn/docs/edit/main/:path",
+                        "https://github.com/dsjerry/webdev/edit/main/docs/:path",
                     text: "在 GitHub 上编辑此页",
                 },
                 docFooter: {
@@ -407,11 +408,11 @@ export default defineConfig({
                     copyright: "Copyright © 2024-present WebDev Learn",
                 },
                 socialLinks: [
-                    { icon: "github", link: "https://github.com/webdev-learn" },
+                    { icon: "github", link: "https://github.com/dsjerry/webdev" },
                 ],
                 editLink: {
                     pattern:
-                        "https://github.com/webdev-learn/docs/edit/main/:path",
+                        "https://github.com/dsjerry/webdev/edit/main/docs/:path",
                     text: "Edit this page on GitHub",
                 },
                 docFooter: {
@@ -427,14 +428,6 @@ export default defineConfig({
         theme: {
             light: "github-light",
             dark: "github-dark",
-        },
-        config(md) {
-            md.options.highlight = (code, lang) => {
-                if (lang === 'wat') {
-                    return `<pre class="wat-block"><code>${code}</code></pre>`
-                }
-                return code
-            }
         },
     },
 
