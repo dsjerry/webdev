@@ -1,0 +1,313 @@
+/* ========================================
+   WebDev Learn - Custom Theme
+   科技感 + 个性化 + 简洁风格
+   ======================================== */
+
+/* 字体优化 */
+:root {
+  --vp-font-family-base: 'Inter', 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif;
+  --vp-font-family-mono: 'Fira Code', 'Source Code Pro', 'Cascadia Code', monospace;
+}
+
+/* 主题色 - 科技蓝 */
+:root {
+  --vp-c-brand-1: #3eaf7c;
+  --vp-c-brand-2: #2e8b57;
+  --vp-c-brand-3: #3cb371;
+  --vp-c-brand-soft: rgba(62, 175, 124, 0.14);
+}
+
+/* 渐变背景效果 */
+.VPHome {
+  padding: 0;
+}
+
+.VPHero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #3eaf7c 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.VPHero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 标题渐变效果 */
+.VPHero .name,
+.VPHero .text {
+  background: linear-gradient(120deg, #fff 30%, #a8edea 50%, #fed6e3 70%, #fff 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+}
+
+.VPHomeFeatures {
+  margin-top: 20px;
+}
+
+/* 卡片悬浮效果 */
+.VPFeature {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
+  background: linear-gradient(var(--vp-c-bg-soft), var(--vp-c-bg-soft)) padding-box,
+    linear-gradient(135deg, var(--vp-c-brand-1), var(--vp-c-brand-2)) border-box;
+  border-radius: 16px;
+}
+
+.VPFeature:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(62, 175, 124, 0.2);
+  border-color: var(--vp-c-brand-1);
+  animation: cardGlow 1.5s ease-in-out infinite alternate;
+}
+
+.VPFeature:hover .VPFeatureLink::after {
+  transform: translateX(4px);
+}
+
+.VPFeature:hover .VPFeatureTitle {
+  color: var(--vp-c-brand-1);
+}
+
+.VPFeature:hover .VPFeatureIcon {
+  animation: iconBounce 0.6s ease;
+}
+
+@keyframes cardGlow {
+  0% {
+    box-shadow: 0 20px 40px rgba(62, 175, 124, 0.2);
+  }
+  100% {
+    box-shadow: 0 20px 60px rgba(62, 175, 124, 0.4);
+  }
+}
+
+@keyframes iconBounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* 侧边栏样式 */
+.VPSidebar {
+  border-right: 1px solid var(--vp-c-divider);
+}
+
+/* 导航栏样式 */
+.VPNav {
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.dark .VPNav {
+  background: rgba(30, 30, 30, 0.8);
+}
+
+/* 代码块样式优化 */
+.vp-code-group .tabs {
+  background: var(--vp-c-bg-soft);
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.vp-code-group .tabs input:checked+label {
+  background: var(--vp-c-brand-1);
+  color: white;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--vp-c-bg-soft);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--vp-c-brand-1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vp-c-brand-2);
+}
+
+/* 选中文字样式 */
+::selection {
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-text-1);
+}
+
+/* 内容区域优化 */
+.VPDoc .content-container {
+  max-width: 864px;
+}
+
+/* 标题装饰线 */
+.VPDoc h1 {
+  position: relative;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+}
+
+.VPDoc h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--vp-c-brand-1), var(--vp-c-brand-3));
+  border-radius: 2px;
+}
+
+/* 引用块样式 */
+blockquote {
+  border-left: 4px solid var(--vp-c-brand-1);
+  background: var(--vp-c-brand-soft);
+  padding: 1rem 1.5rem;
+  border-radius: 0 8px 8px 0;
+  margin: 1.5rem 0;
+}
+
+/* 表格样式 */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+th,
+td {
+  border: 1px solid var(--vp-c-divider);
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+th {
+  background: var(--vp-c-brand-soft);
+  font-weight: 600;
+}
+
+tr:hover {
+  background: var(--vp-c-bg-soft);
+}
+
+/* 进度条效果（首页） */
+.VPFeature .icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* 暗色模式适配 */
+.dark .VPHero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  background-size: 400% 400%;
+  animation: gradientShiftDark 15s ease infinite;
+}
+
+@keyframes gradientShiftDark {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.dark .VPHero .name,
+.dark .VPHero .text {
+  background: linear-gradient(120deg, #fff 30%, #a8edea 50%, #fed6e3 70%, #fff 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark .VPFeature {
+  background: linear-gradient(var(--vp-c-bg-soft), var(--vp-c-bg-soft)) padding-box,
+    linear-gradient(135deg, var(--vp-c-brand-1), var(--vp-c-purple-1)) border-box;
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+  .VPHero {
+    padding: 3rem 1.5rem;
+  }
+
+  .VPFeature {
+    padding: 1.5rem;
+  }
+}
+
+/* 打字机光标效果 */
+.VPHero .tagline::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* 页面切换动画 */
+.VPContent {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* WAT (WebAssembly Text) format styling */
+.wat-block {
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
